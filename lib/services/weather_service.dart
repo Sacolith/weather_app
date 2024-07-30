@@ -5,8 +5,8 @@ import 'package:weather_app/models/weather_model.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherService{
-  final String baseUrl= dotenv.env['URL_KEY'] ?? '';
-  final String apiKey= dotenv.env['API_KEY'] ?? '';
+  final String baseUrl= dotenv.get('URL_KEY');
+  final String apiKey= dotenv.get('API_KEY');
 
   Future<Weather> fetchWeather(String city) async{
     final response= await http.get(
