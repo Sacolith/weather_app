@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
-import '../models/weather_model.dart';
+class ForecastWidget extends StatelessWidget {
+  final String day;
+  final String description;
+  final double temperature;
 
-class ForecastWidget extends StatelessWidget{
-  final List<Weather> forecast;
-  const ForecastWidget({super.key, required this.forecast, required day, required description, required temperature});
+  const ForecastWidget({
+    super.key,
+    required this.day,
+    required this.description,
+    required this.temperature, 
+  });
 
   @override
-  Widget build(BuildContext context){
-    return Column(
-      children: forecast.map((weather){
-        return Card(
-          child: ListTile(
-            hoverColor: Colors.amber,
-            title: Text(weather.location),
-            subtitle: Text(weather.description),
-            trailing: Text('${weather.temperature.toStringAsFixed(1)}°C'),
-          ),
-        );
-      }).toList()
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title: Text(day),
+        subtitle: Text(description),
+        trailing: Text('${temperature.toStringAsFixed(1)}°C'),
+      ),
     );
   }
 }

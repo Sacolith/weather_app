@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:weather_app/models/weather_model.dart';
+import 'package:weather_app/screens/forecast_screen.dart';
 import 'package:weather_app/screens/settings_screen.dart';
 import 'package:weather_app/services/weather_service.dart';
 import 'package:weather_app/widgets/weather_widget.dart';
@@ -43,6 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
         _weather = weather;
       });
     } catch (e) {
+      debugPrint(e.toString());
+      debugPrint(_cityController.text);
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Failed to load weather data')),
@@ -52,6 +55,13 @@ class _HomeScreenState extends State<HomeScreen> {
         _isLoading = false;
       });
     }
+  }
+
+  void _getForecast(){
+    Navigator.push(context, 
+    MaterialPageRoute(builder: (context)=>ForecastScreen(city: _cityController.text)
+    )
+    );
   }
 
   @override
@@ -104,6 +114,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               child: const Text('Get Weather'),
+            ),
+            const SizedBox(height: 10,),
+            ElevatedButton(onPressed:(){
+              _getForecast();
+            },
+             style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Colors.blue.shade700,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+            ),
+            child: const Text('Get Forcast')
             ),
             const SizedBox(height: 20),
             _isLoading

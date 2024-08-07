@@ -98,6 +98,7 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               onChanged: (value) {
                 _defaultCity = value;
+                
                 _saveSettings();
               },
             ),

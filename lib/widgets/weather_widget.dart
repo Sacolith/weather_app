@@ -18,6 +18,8 @@ class WeatherWidget extends StatelessWidget{
         style: const TextStyle(fontSize: 20),),
         Text('Description: ${weather.description}',
         style: const TextStyle(fontSize: 20),),
+              Text('Time: ${weather.localtime}',
+        style: const TextStyle(fontSize: 20),),
       ],);
   }
 }
