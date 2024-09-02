@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/design/colors.dart';
 
 class ForecastWidget extends StatelessWidget {
   final String day;
@@ -14,11 +15,16 @@ class ForecastWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return
+    Card(
+      color: Colors.black,
       child: ListTile(
-        title: Text(day),
-        subtitle: Text(description),
-        trailing: Text('${temperature.toStringAsFixed(1)}°C'),
+        title: Text(day,
+        style: const TextStyle(color: Colors.white),),
+        subtitle: Text(description,
+        style: TextStyle(color: Colors.blue.shade700),),
+        trailing: Text('${temperature.toStringAsFixed(1)}°C',
+        style: const TextStyle(color: Cols.buttoncol),),
       ),
     );
   }
