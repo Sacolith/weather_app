@@ -23,7 +23,7 @@ Widgets(forecast_widget.dart,location_widget.dart,weather_widget.dart)
 )
 
 Installation and Setup
-git clone https://github.com/Sacolith/weather-app.git
+git clone https://github.com/Sacolith/weather_app
 cd weather-app
 flutter pub get
 flutter run
