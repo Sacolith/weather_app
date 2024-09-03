@@ -95,12 +95,16 @@ class _SettingScreenState extends State<SettingScreen> {
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Enter default city',
+                labelStyle: TextStyle(color: Colors.white),
+                filled: true,
+                fillColor: Colors.black
               ),
               onChanged: (value) {
                 _defaultCity = value;
                 
                 _saveSettings();
               },
+              style: const TextStyle(color: Colors.white),
             ),
             const SizedBox(height: 20),
             const Text(
