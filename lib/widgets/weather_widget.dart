@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:weather_app/models/weather_model.dart';
 
+//responsible for the look of the retrieved weather Data
 class WeatherWidget extends StatelessWidget{
   final Weather weather;
   const WeatherWidget({super.key, required this.weather});

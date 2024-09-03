@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/design/colors.dart';
 
+//responsible for the look of the forecast card
 class ForecastWidget extends StatelessWidget {
   final String day;
   final String description;

@@ -5,6 +5,7 @@ import 'package:weather_app/design/colors.dart';
 import 'package:weather_app/routes.dart';
 
 void main() async{
+  //need to initialize otherwise hiding api keys was for noting and it won't work
   await dotenv.load(fileName: "assets/.env");
   runApp(const MainApp());
 }
@@ -22,6 +23,7 @@ class MainApp extends StatelessWidget {
   }
 }
 
+//simple custom theme
  // ignore: non_constant_identifier_names
  ThemeData _Wtheme(){
   return ThemeData(

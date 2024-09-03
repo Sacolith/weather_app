@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:weather_app/models/weather_model.dart';
 import 'package:http/http.dart' as http;
 
+//This file is where most of the heavy lifting is done for the api calls and data processing
 class WeatherService{
   final String baseUrl= dotenv.get('URL_KEY');
   final String apiKey= dotenv.get('API_KEY');
@@ -19,7 +20,7 @@ class WeatherService{
 
     if(response.statusCode==200){
       final data= json.decode(response.body);
-       debugPrint(city);
+       debugPrint(city); // you can remove this if you like was having errors with the city had to debug.
       return Weather(
         localtime: data['location']['localtime'],
         description: data['current']['condition']['text'],
@@ -38,7 +39,7 @@ class WeatherService{
     );
     if(response.statusCode==200){
      final data= json.decode(response.body);
-     debugPrint(response.body);
+     debugPrint(response.body); //same city debug issue
      final forecastList=(
       data['forecast']['forecastday'] as List).map
       ((item)=> WeatherForecast.fromJson(

@@ -77,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     }
   }
 
+//Animation for the forecast screen (it slides from down to up)
   Route _getForecast() {
     return PageRouteBuilder<SlideTransition>(
       pageBuilder: (context, animation, secondaryAnimation) =>
@@ -93,6 +94,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     );
   }
 
+//navigation to settings page animation (it slides from right to left)
   Route _settings() {
     return PageRouteBuilder<SlideTransition>(
       pageBuilder: (context, animation, secondaryAnimation) => const SettingScreen(),
@@ -169,7 +171,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             _isLoading
                 ? const Center(child: CircularProgressIndicator())
                 : _weather != null
-                    ? ScaleTransition(
+                    ? //animation for the retrieved weather data (text expands) 
+                    ScaleTransition(
                         scale: _scaleAnimation,
                         child: WeatherWidget(weather: _weather!),
                       )
