@@ -13,6 +13,8 @@ Dynamic UI Updates
 Custom Animations
 Package Utilization
 
+Packages: http,flutter_dotenv,provider, animations
+
 Project Structure:
 Lib(
     main.dart,routes.dart,
