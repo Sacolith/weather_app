@@ -22,7 +22,9 @@ Models(weather_model.dart),
 Screens(forecast_screen.dart home_screendart, settngs_screen.dart),
 Services(weather_service.dart),
 Widgets(forecast_widget.dart,location_widget.dart,weather_widget.dart)
-)
+).
+
+Visual Demo: https://www.linkedin.com/posts/sacqlain-brown-31b089269_flutter-restapi-activity-7236562729895956480-KQxl?utm_source=share&utm_medium=member_desktop
 
 Installation and Setup
 git clone https://github.com/Sacolith/weather_app
